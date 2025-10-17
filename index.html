@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Self-contained Markdown to HTML renderer using a bundled 'marked'-style parser. Renders input.md (if present) or an embedded fallback." />
+  <title>Markdown → HTML (marked) | input.md viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1 class="app-title">Markdown → HTML (marked)</h1>
+    <p class="subtitle">Renders input.md using a bundled, marked-compatible parser</p>
+    <div class="toolbar" role="group" aria-label="Viewer actions">
+      <button id="reloadBtn" class="btn" type="button" title="Reload input.md from disk">Reload input.md</button>
+      <button id="toggleSourceBtn" class="btn" type="button" title="Show/Hide markdown source">Toggle source</button>
+    </div>
+    <div id="status" class="status" aria-live="polite"></div>
+  </header>
+
+  <main class="content">
+    <section class="pane pane-source" aria-labelledby="sourceHeading">
+      <h2 id="sourceHeading" class="visually-hidden">Markdown source</h2>
+      <pre id="source" class="source" tabindex="0" aria-label="Markdown source"></pre>
+    </section>
+
+    <section class="pane pane-render" aria-labelledby="renderHeading">
+      <h2 id="renderHeading" class="visually-hidden">Rendered HTML</h2>
+      <article id="rendered" class="rendered markdown-body"></article>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small>Self-contained demo. No external network requests required. License: MIT.</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
